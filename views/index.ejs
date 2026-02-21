@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Welcome to the homepage!</h2>
+    <% for(let post of posts) {%>
+        <div class="post">
+        <h3><%= post.title %></h3>
+        <p><%= post.content %></p>
+        <a href="/posts/<%= post.id %>">see in detail</a>
+       <a href="/posts/<%= post.id %>/edit">Edit Post</a>
+         <form method="POST" action="/posts/<%= post.id %>?_method=DELETE" style="display:inline;">
+            <button type="submit">Delete Post</button>  
+        </div>
+    <% } %>
+
+    <a href="/posts/new" style="margin-left: 100px;">Create New Post</a>
+
+
+</body>
+</html>
+

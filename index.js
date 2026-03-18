@@ -27,6 +27,11 @@ let posts =[
         }
 ]
 // main page
+
+app.get('/', (req, res) => {
+  res.send('<h1>Qura Project is Live!</h1><p>The server is running successfully.</p>');
+});
+
 app.get("/posts",(req,res)=>{
     res.render("index.ejs",{posts});
 })
